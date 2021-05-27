@@ -3,6 +3,7 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
+import re
 
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
@@ -44,3 +45,37 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+#Part A
+call_made = []
+for call in calls:
+  if call[0].startswith("(080)"):
+    if call[1].startswith("("):
+      res = re.findall(r'\(.*?\)', call[1])
+      call_made.append(res[0][1:-1])
+      # print(call[1])
+    elif call[1].startswith("140"):
+      call_made.append("140")
+      # print(call[1])
+    else:
+      call_made.append(call[1][:4])
+#having only unique values
+call_made = list(dict.fromkeys(call_made))
+call_made.sort()
+
+print("The numbers called by people in Bangalore have codes:")
+for call in call_made:
+  print(call)
+
+
+#Part B
+total_calls = 0
+specific_calls = 0
+for call in calls:
+  if call[0].startswith("(080)"):
+    total_calls = total_calls + 1
+    if call[1].startswith("(080)"):
+      specific_calls = specific_calls + 1
+print("PART B")
+output_str = "{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
+print(output_str.format(round((specific_calls/total_calls)*100, 2)))
