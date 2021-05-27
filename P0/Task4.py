@@ -25,3 +25,26 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+"""
+Traverse calls and find out only numbers wihch call and have no incoming calls
+"""
+final_liust = []
+for call in calls:
+    if call[0] not in final_liust:
+        final_liust.append(call[0])
+    
+    if call[1] in final_liust:
+        final_liust.remove(call[1])
+
+
+for text in texts:
+    if text[0] in final_liust:
+        final_liust.remove(text[0])
+    
+    if text[1] in final_liust:
+        final_liust.remove(text[1])
+
+final_liust.sort()
+print("These numbers could be telemarketers: ")
+for number in final_liust:
+    print(number)
