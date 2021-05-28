@@ -1,0 +1,30 @@
+Task 0 - 
+
+Since accesing using index would be O(1) and the elements are being accesed via their indexes the overall complexity would be O(1)
+Overall Complexity - O(1)
+
+Task 1 - 
+
+2 for loops so it would be O(n) but since the dictionary update function takes O(n) so it would be O(n^2)
+Overall complexity - O(n^2)
+
+Task 2 - 
+
+Overall complexity - O(n^2)
+
+Task 3 -
+
+Part A - 
+
+Since the list.sort() takes O(nlogn) which is greater than the complexity of the for loop the overall complexity would be O(nlogn)
+Overall complexity - O(nlogn)
+
+Part B - 
+
+Overall complexity - O(n)
+
+Task 4 - 
+
+3 loops each taking O(n) but the list.sort function takes O(nlogn) 
+But the list.remove() takes O(n) making the for loops O(n^2)
+Overall complexity - O(n^2)
