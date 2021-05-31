@@ -32,7 +32,8 @@ final_liust = []
 for call in calls:
     if call[0] not in final_liust:
         final_liust.append(call[0])
-    
+
+for call in calls:
     if call[1] in final_liust:
         final_liust.remove(call[1])
 
@@ -40,12 +41,13 @@ for call in calls:
 for text in texts:
     if text[0] in final_liust:
         final_liust.remove(text[0])
-    
+
     if text[1] in final_liust:
         final_liust.remove(text[1])
 
 final_liust.sort()
 print("These numbers could be telemarketers: ")
+# print(len(final_liust))
 for number in final_liust:
     print(number)
 

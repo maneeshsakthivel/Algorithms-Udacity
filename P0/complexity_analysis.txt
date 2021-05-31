@@ -5,12 +5,13 @@ Overall Complexity - O(1)
 
 Task 1 - 
 
-2 for loops so it would be O(n) but since the dictionary update function takes O(n) so it would be O(n^2)
-Overall complexity - O(n^2)
+2 for loops so it would be O(n) but since the dictionary update function takes O(1)
+Overall complexity - O(n)
 
 Task 2 - 
+Only one for loop which would be O(n)
 
-Overall complexity - O(n^2)
+Overall complexity - O(n)
 
 Task 3 -
 
@@ -24,7 +25,6 @@ Part B -
 Overall complexity - O(n)
 
 Task 4 - 
+The list.remove() takes O(n) and the if-in line also takes O(n) making the for loop O(n^3)
 
-3 loops each taking O(n) but the list.sort function takes O(nlogn) 
-But the list.remove() takes O(n) making the for loops O(n^2)
-Overall complexity - O(n^2)
+Overall complexity - O(n^3)
